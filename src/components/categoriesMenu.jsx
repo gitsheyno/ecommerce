@@ -1,5 +1,3 @@
-import React from "react";
-
 const categoriesMenu = [
   {
     id: 1,
