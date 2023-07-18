@@ -2,6 +2,7 @@ import {
   signInWithGooglePopup,
   creatUseDocumentFromAuth,
 } from "../../utils/firebase/firebase.util";
+import Button from "../../components/button/button.component";
 import SignUpForm from "../../sing-up/sing-up-form.component";
 
 const SignIn = () => {
@@ -13,7 +14,9 @@ const SignIn = () => {
   return (
     <div>
       <h1>Sign in page</h1>
-      <button onClick={logGoogleUser}>Log in with google account</button>
+      <Button buttonType="google" onClick={logGoogleUser}>
+        Log in with google account
+      </Button>
       <SignUpForm />
     </div>
   );
