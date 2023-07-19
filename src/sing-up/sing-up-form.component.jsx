@@ -22,12 +22,13 @@ const SignUpForm = () => {
     e.preventDefault();
 
     if (password !== confirmPassword) return;
-
+    console.log(1);
     try {
       const { user } = await createAuthUserWithEmailAndPassword(
         email,
         password
       );
+      console.log(user);
       const createDoc = await creatUseDocumentFromAuth(user, { displayName });
       console.log(createDoc);
     } catch (err) {
