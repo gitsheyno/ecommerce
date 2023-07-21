@@ -1,4 +1,5 @@
 import { useState } from "react";
+
 import {
   signInWithGooglePopup,
   creatUseDocumentFromAuth,
@@ -17,19 +18,16 @@ const SignInForm = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
 
   const signInWithGoogle = async () => {
-    console.log(1);
-    const { user } = await signInWithGooglePopup();
-    const userDocRefrence = await creatUseDocumentFromAuth(user);
+    await signInWithGooglePopup();
   };
 
   const { email, password } = formFields;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(2);
+
     try {
-      const response = await signInUserWithEmailAndPassword(email, password);
-      console.log(response);
+      const { user } = await signInUserWithEmailAndPassword(email, password);
     } catch (err) {
       if (err.code === "auth/wrong-password") {
         alert("incorect password");

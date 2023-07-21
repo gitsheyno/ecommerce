@@ -6,6 +6,7 @@ import {
 import FormInput from "../components/form-input/form-input.component";
 import "./sing-up-form.styles.scss";
 import Button from "../components/button/button.component";
+
 const defaultFormFields = {
   displayName: "",
   email: "",
@@ -22,15 +23,14 @@ const SignUpForm = () => {
     e.preventDefault();
 
     if (password !== confirmPassword) return;
-    console.log(1);
+
     try {
       const { user } = await createAuthUserWithEmailAndPassword(
         email,
         password
       );
-      console.log(user);
+
       const createDoc = await creatUseDocumentFromAuth(user, { displayName });
-      console.log(createDoc);
     } catch (err) {
       if (err.code === "auth/email-already-in-use") {
         alert("Wrong Email");
@@ -46,7 +46,7 @@ const SignUpForm = () => {
   };
   return (
     <div className="sign-up-container">
-      <h2>Don't hvae an account</h2>
+      <h2>Don't have an account</h2>
       <span>Sign up with your email and password</span>
       <form onSubmit={handleSubmit}>
         <FormInput

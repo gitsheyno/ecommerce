@@ -6,11 +6,7 @@ const buttonTypesClasses = {
 };
 
 const Button = ({ children, buttonType, type, onClick }) => {
-  console.log("Button - children:", children);
-  console.log("Button - type:", type);
-
   const handleClick = (event) => {
-    console.log("Button - handleClick called");
     if (onClick) {
       onClick(event);
     }
