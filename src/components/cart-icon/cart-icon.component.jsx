@@ -3,7 +3,7 @@ import "../cart-icon/cart-icon.styles.scss";
 import { useContext } from "react";
 import { CartContext } from "../../context/cart.context";
 const CartIcon = () => {
-  const { setCartIsShown, totalAmount } = useContext(CartContext);
+  const { setCartIsShown, totalItems } = useContext(CartContext);
 
   const dropDownHnadler = (e) => {
     setCartIsShown((prev) => {
@@ -13,7 +13,7 @@ const CartIcon = () => {
   return (
     <div className="cart-icon-container">
       <ShoppingIcon className="shopping-item" onClick={dropDownHnadler} />
-      <span className="item-count">{totalAmount}</span>
+      <span className="item-count">{totalItems}</span>
     </div>
   );
 };

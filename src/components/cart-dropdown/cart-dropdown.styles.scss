@@ -17,8 +17,8 @@
   }
 
   .cart-items {
-    // height: 240px;
-    height: 100%;
+    height: 240px;
+    // height: 100%;
     display: flex;
     flex-direction: column;
     overflow: scroll;
@@ -26,5 +26,6 @@
 
   button {
     margin-top: auto;
+    width: 100%;
   }
 }
