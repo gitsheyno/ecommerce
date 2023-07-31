@@ -1,0 +1,70 @@
+.directory-item-container {
+  min-width: 30%;
+  height: 240px;
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+  margin: 0 7.5px 15px;
+  overflow: hidden;
+  position: relative;
+}
+
+.directory-item-container:hover {
+  cursor: pointer;
+}
+
+.directory-item-container .background-image {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: transform 6s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+}
+
+.directory-item-container .body {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.7); /* Transparent white background */
+}
+
+.directory-item-container:hover .background-image {
+  transform: scale(1.1);
+}
+
+.directory-item-container:hover .body {
+  opacity: 0.9;
+}
+
+/* Media query for larger screens */
+// @media (min-width: 768px) {
+//   .directory-item-container {
+//     min-width: 48%; /* Adjust the width as needed */
+//     height: 380px;
+//   }
+// }
+
+// /* Media query for medium screens */
+// @media (max-width: 767px) {
+//   .directory-item-container {
+//     min-width: 100%; /* Make the container take full width on medium screens */
+//     height: 300px; /* Adjust the height as needed */
+//   }
+// }
+
+// /* Media query for smaller screens */
+// @media (max-width: 576px) {
+//   .directory-item-container {
+//     min-width: 100%; /* Make the container take full width on smaller screens */
+//     height: 180px; /* Adjust the height as needed */
+//   }
