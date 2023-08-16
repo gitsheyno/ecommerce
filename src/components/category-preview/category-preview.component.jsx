@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 
 const CategoryPreview = ({ title, products }) => {
   const endPoint = useParams();
+
   console.log(endPoint);
   return (
     <div className="category-preview-container">
