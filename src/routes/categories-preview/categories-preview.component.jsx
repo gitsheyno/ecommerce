@@ -7,22 +7,20 @@ import CategoryPreview from "../../components/category-preview/category-preview.
 import Spinner from "../../components/spinner/spinner.component";
 const CategoriesPreview = () => {
   const categoriesMap = useSelector(selectCategoriesSelector);
-  const categoriesIsLoading = useSelector(selectCategoriesIsLoading);
+  console.log(categoriesMap);
+  // const categoriesIsLoading = useSelector(selectCategoriesIsLoading);
 
   return (
     <>
-      {categoriesIsLoading ? (
-        <Spinner />
-      ) : (
-        <div className="shop-container">
-          {Object.keys(categoriesMap).map((title) => {
-            const products = categoriesMap[title];
-            return (
-              <CategoryPreview key={title} products={products} title={title} />
-            );
-          })}
-        </div>
-      )}
+      {/* <Spinner /> */}
+      <div className="shop-container">
+        {Object.keys(categoriesMap).map((title) => {
+          const products = categoriesMap[title];
+          return (
+            <CategoryPreview key={title} products={products} title={title} />
+          );
+        })}
+      </div>
     </>
   );
 };

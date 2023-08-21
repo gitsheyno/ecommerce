@@ -9,7 +9,7 @@ import Spinner from "../../components/spinner/spinner.component";
 const Category = () => {
   const { category } = useParams();
   const categoriesMap = useSelector(selectCategoriesSelector);
-  const categoriesIsLoading = useSelector(selectCategoriesIsLoading);
+  // const categoriesIsLoading = useSelector(selectCategoriesIsLoading);
   const [products, setProducts] = useState(categoriesMap[category]);
 
   useEffect(() => {
@@ -19,16 +19,15 @@ const Category = () => {
   return (
     <>
       <h2 className="title">{category.toUpperCase()}</h2>
-      {categoriesIsLoading ? (
-        <Spinner />
-      ) : (
-        <div className="category-container">
-          {products &&
-            products.map((product) => {
-              return <ProductCard key={product.id} product={product} />;
-            })}
-        </div>
-      )}
+
+      {/* <Spinner /> */}
+
+      <div className="category-container">
+        {products &&
+          products.map((product) => {
+            return <ProductCard key={product.id} product={product} />;
+          })}
+      </div>
     </>
   );
 };

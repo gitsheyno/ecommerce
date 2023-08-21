@@ -1,18 +1,19 @@
 import "./checkout.styles.scss";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { addItem, removeItem } from "../../store/cart/cart.action";
+import { addItem, removeItem, clearItem } from "../../store/cart/cart.reducer";
 import {
   selectCartItems,
   selectCartQuantity,
 } from "../../store/cart/cart.selector";
+import PaymentForm from "../../components/payment-form/payment-form.component";
 import CheckOutItem from "../../components/checkout-item/checkout-item.component";
 const Checkout = () => {
   const cartItems = useSelector(selectCartItems);
   const totalAmount = useSelector(selectCartQuantity);
   const dispatch = useDispatch();
   const handleDelete = (product) => {
-    dispatch(removeItem(cartItems, product, true));
+    dispatch(clearItem(product));
   };
 
   return (
@@ -46,6 +47,7 @@ const Checkout = () => {
         );
       })}
       <span className="total">Total : {totalAmount}</span>
+      <PaymentForm />
     </div>
   );
 };

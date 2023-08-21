@@ -13,17 +13,11 @@ const CheckOutItem = ({ cartItem, handleDelete, removeItem, addItem }) => {
       </div>
       <span className="name">{name}</span>
       <span className="quantity">
-        <div
-          className="arrow"
-          onClick={() => dispatch(removeItem(cartItems, cartItem))}
-        >
+        <div className="arrow" onClick={() => dispatch(removeItem(cartItem))}>
           &#10094;
         </div>
         <span className="value">{quantity}</span>
-        <div
-          className="arrow"
-          onClick={() => dispatch(addItem(cartItems, cartItem))}
-        >
+        <div className="arrow" onClick={() => dispatch(addItem(cartItem))}>
           &#10095;
         </div>
       </span>
